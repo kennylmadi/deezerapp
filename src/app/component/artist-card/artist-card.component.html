@@ -1,0 +1,14 @@
+<div class="card text-light bg-dark" (click)="navToArtist()">
+  <div class="card-header">{{ artist.name }}</div>
+  <img [src]="artist.picture_medium" class="card-img-top" [alt]="artist.name">
+  <div class="card-body p-0">
+    <ul class="list-group list-group-flush text-light bg-dark">
+      <li class="list-group-item text-light bg-dark text-end">{{ !!artist.nb_fan ? (artist.nb_fan | shortNumber) : "..."
+        }} fans</li>
+      <li class="list-group-item text-light bg-dark text-end">{{ artist.nb_album || "..." }} albums</li>
+      <button routerLink="/artist/{{ artist.id }}">
+        View Artist Details
+      </button>
+    </ul>
+  </div>
+</div>
